@@ -1,0 +1,1539 @@
+{
+	"info": {
+		"_postman_id": "02341d85-87fe-4f33-b66d-e4401c33c0e5",
+		"name": "CAMPAIGN",
+		"description": "Postman requests for REST With Spring Boot Course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "418131"
+	},
+	"item": [
+		{
+			"name": "The Basics of REST With Spring Boot",
+			"item": [
+				{
+					"name": "The Web Configuration",
+					"item": [
+						{
+							"name": "List of Campaigns",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								},
+								"description": "Request to get list of campaigns"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Campaign",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"1"
+									]
+								},
+								"description": "Request to get a campaign by ID"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Campaign",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"CNew\",\n    \"name\": \"Campaign New\",\n    \"description\": \"Description of Campaign New\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								},
+								"description": "Request to create a campaign"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Campaign",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Campaign 1 Updated\",\n    \"description\": \"Description of Campaign 1 Updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"1"
+									]
+								},
+								"description": "Request to update a campaign"
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL web configuration based on HTTP Method."
+				}
+			],
+			"description": "Demonstrates the basics of REST with Spring Boot"
+		},
+		{
+			"name": "REST and HTTP Semantics",
+			"item": [
+				{
+					"name": "Leverage HTTP Verbs and Semantics in REST API Operations",
+					"item": [
+						{
+							"name": "List of Campaigns",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								},
+								"description": "Request to get list of campaigns"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Campaign",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"1"
+									]
+								},
+								"description": "Request to get a campaign by ID"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Campaign",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"CNew\",\n    \"name\": \"Campaign New\",\n    \"description\": \"Description of Campaign New\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								},
+								"description": "Request to create a campaign"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Campaign",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Campaign 1 Updated\",\n    \"description\": \"Description of Campaign 1 Updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"1"
+									]
+								},
+								"description": "Request to update a campaign"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Campaign",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns/3",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"3"
+									]
+								},
+								"description": "Request to delete a campaign by ID"
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL Leverage HTTP Verbs and Semantics based on HTTP Method."
+				},
+				{
+					"name": "The Lifecycle of a Request",
+					"item": [
+						{
+							"name": "Create Campaign",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"CNew\",\r\n    \"name\": \"Campaign New\",\r\n    \"description\": \"Description of Campaign New\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Demonstrates the REST and HTTP Semantics."
+		},
+		{
+			"name": "Input Validation and Exception Handling",
+			"item": [
+				{
+					"name": "Exception Handling and Sane HTTP Status Codes",
+					"item": [
+						{
+							"name": "Get Non Existing Task",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/tasks/99",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"99"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Non Existing Endpoint",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/other",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"other"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid Method - Put on tasks list",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid Content-Type",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Invalid Content-Type\",\n    \"campaignId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Invalid Task 1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campaignId\": 99,\r\n    \"name\": \"Task 1\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Invalid Task 2",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campaignId\": 1,\r\n    \"name\": \"Task 1\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\",\r\n    \"assignee\": {\r\n        \"id\": 99\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL Exception Handling and Sane HTTP Status Codes."
+				},
+				{
+					"name": "Global API Exception Handling",
+					"item": [
+						{
+							"name": "Put Invalid Task 1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campaignId\": 99,\r\n    \"name\": \"Task 1\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Invalid Campaign - duplicated code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"code\": \"C1\",\r\n        \"name\": \"Campaign 1 - duplicated 'code' field\",\r\n        \"description\": \"Description of Campaign 1, which already exists!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Invalid Worker - duplicated email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"john@test.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Other\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Invalid Task 2 - null campaignId",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campaignId\": null,\r\n    \"name\": \"Task 1\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Invalid Task 3 - id not matching path param",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"campaignId\": 1,\r\n    \"name\": \"Task 1\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL Global API Exception Handling."
+				},
+				{
+					"name": "The Basics of Input Validation",
+					"item": [
+						{
+							"name": "Post Invalid Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"campaignId\" : null,\r\n  \"name\" : \"New Task\",\r\n  \"description\" : \"New Task Description\",\r\n  \"dueDate\" : \"2050-12-30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Valid Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"campaignId\" : 1,\r\n  \"name\" : \"New Task\",\r\n  \"description\" : \"New Task Description\",\r\n  \"dueDate\" : \"2050-12-30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Invalid Campaign",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"short\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Invalid Worker",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"not-an-email\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL Basic Input Validation based on HTTP Method."
+				},
+				{
+					"name": "Validation Groups for Different API Operations",
+					"item": [
+						{
+							"name": "Get Past-Due Task",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Past-Due Task",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Task 1 Updated Name\",\r\n    \"description\": \"Task 1 Updated Description\",\r\n    \"dueDate\": \"2000-01-12\",\r\n    \"status\": \"To Do\",\r\n    \"campaignId\": 1,\r\n    \"assignee\": null,\r\n    \"estimatedHours\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Task Assignee - Invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\": {\r\n        \"firstName\": \"not updatable\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1/assignee",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1",
+										"assignee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Task Assignee - Valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assignee\": {\r\n        \"id\": 2,\r\n        \"firstName\": \"not updatable\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1/assignee",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1",
+										"assignee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Task - passing 'invalid' Assignee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Task New\",\r\n    \"description\": \"Task New Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"campaignId\": 1,\r\n    \"assignee\": {\r\n        \"id\": null,\r\n        \"email\": null,\r\n        \"firstName\": \"assignee data should\",\r\n        \"lastNamez\": \"be ignored\" \r\n    },\r\n    \"estimatedHours\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Requests to test URL Basic Input Validation based on HTTP Method."
+				},
+				{
+					"name": "Spring and the Problem Details Spec",
+					"item": [
+						{
+							"name": "Post Invalid Campaign",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"code\": null,\r\n    \"description\": \"Campaign Description\",\r\n    \"name\": \"New Campaign\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Invalid Worker - duplicated email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"john@test.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Invalid Task 1 - id not matching path param",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":99,\r\n    \"campaignId\": 99,\r\n    \"name\": \"Task 1 Updated\",\r\n    \"description\": \"Task 1 Description\",\r\n    \"dueDate\": \"2030-01-12\",\r\n    \"status\": \"To Do\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Demonstrates Input Validation and Exception Handling."
+		},
+		{
+			"name": "Testing the API",
+			"item": [
+				{
+					"name": "Contract Testing - A Special Kind Of Test",
+					"item": [
+						{
+							"name": "Create Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test - New Task 1\",    \n    \"description\": \"Description of New Task 1\",\n    \"dueDate\": \"2050-12-30\",\n    \"campaignId\": 1\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								},
+								"description": "Request to create a task"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Document and Discover the REST API",
+			"item": [
+				{
+					"name": "Discover a REST API - HATEOAS",
+					"item": [
+						{
+							"name": "Create Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Task New\",\n    \"description\" : \"Task New description\",\n    \"dueDate\" : \"2050-12-31\",\n    \"status\" : \"1\",\n    \"campaignId\" : 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Campaign With Tasks and Assignees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Collection of Campaigns",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Demonstrates Discover a REST API - HATEOAS"
+				}
+			],
+			"description": "Demonstrates Document and Discover the REST API"
+		},
+		{
+			"name": "Evolve the REST API",
+			"item": [
+				{
+					"name": "Dealing with Changes in the API - URL Changes",
+					"item": [
+						{
+							"name": "Get Worker",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/workers/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/employees/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"employees",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks via Campaign",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/campaigns/1/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns",
+										"1",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks - HATEOAS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/tasks?name=Task&assigneeId=1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Task"
+										},
+										{
+											"key": "assigneeId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Demonstrates changes in the API - URL Changes"
+				},
+				{
+					"name": "Dealing with Changes in the API - Resource Changes",
+					"item": [
+						{
+							"name": "Create Campaign",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"CNew\",\n    \"name\": \"Campaign New\",\n    \"description\": \"Description of Campaign New\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/campaigns",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Task without estimatedHours",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Test Task\",\n    \"description\": \"Description of new test task\",\n    \"status\": \"Done\",\n    \"dueDate\": \"2050-12-31\",\n    \"campaignId\": \"ebcbeadc-c7de-45ec-8c45-7d23a2554cc6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Worker with Old structure",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"john@old-worker.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"OldWorkerStructureDoe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Worker with New structure",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.baeldung.new-worker+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n      \"email\": \"john@new-worker.com\"  \n    },\n    \"firstName\": \"John\",\n    \"lastName\": \"NewWorkerStructureDoe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Demonstrates changes in the API - Resource Changes"
+				},
+				{
+					"name": "Dealing with Changes in the API - Versioning",
+					"item": [
+						{
+							"name": "List of Tasks - v1 - URL",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/v1/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"v1",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks - v2 - URL",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/v2/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"v2",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks - v1 - Content Negotiation",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.CAMPAIGN.api.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Tasks - v2 - Content Negotiation",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.CAMPAIGN.api.v2+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Task - v2 - Content Negotiation w/o Content-Type",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.CAMPAIGN.api.v2+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Task v2 Content Negotiation\",\n    \"description\": \"New Task v2 Content Negotiation description\",\n    \"status\": \"Done\",\n    \"dueDate\": \"2050-12-31\",\n    \"campaignId\": 1,\n    \"estimatedHours\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Task - v2 - Content Negotiation with Content-Type",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.CAMPAIGN.api.v2+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.CAMPAIGN.api.v2+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Task v2 Content Negotiation\",\n    \"description\": \"New Task v2 Content Negotiation description\",\n    \"status\": \"Done\",\n    \"dueDate\": \"2050-12-31\",\n    \"campaignId\": 1,\n    \"estimatedHours\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Demonstrates changes in the API - Versioning"
+				},
+				{
+					"name": "Decouple the API from the Domain Model",
+					"item": [
+						{
+							"name": "Create Task with estimatedHours",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Test Task\",\n    \"description\": \"Description of new test task\",\n    \"status\": \"Done\",\n    \"dueDate\": \"2050-12-31\",\n    \"campaignId\": 1,\n    \"estimatedHours\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Task without estimatedHours",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Test Task\",\n    \"description\": \"Description of new test task\",\n    \"status\": \"Done\",\n    \"dueDate\": \"2050-12-31\",\n    \"campaignId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/tasks",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Worker with Old structure",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"john@old-worker.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"OldWorkerStructureDoe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Worker with New structure",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.baeldung.new-worker+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n      \"email\": \"john@new-worker.com\"  \n    },\n    \"firstName\": \"John\",\n    \"lastName\": \"NewWorkerStructureDoe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/workers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"workers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Demonstrates evolution of Rest API"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080"
+		}
+	]
+}
