@@ -1,7 +1,11 @@
 package com.foo.campaign.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
+@Getter
 public enum TaskStatus {
     //@formatter:off
     TO_DO("To Do"), 
@@ -11,14 +15,6 @@ public enum TaskStatus {
     //@formatter:on
 
     private final String label;
-
-    TaskStatus(String label) {
-        this.label = label;
-    }
-
-    public String getLabel() {
-        return label;
-    }
 
     @JsonValue
     public String toValue() {

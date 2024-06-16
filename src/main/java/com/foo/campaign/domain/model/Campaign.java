@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.NaturalId;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -22,6 +23,7 @@ public class Campaign {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NaturalId
     @Column(unique = true, nullable = false, updatable = false)
     @NotNull
     private String code;
@@ -40,29 +42,16 @@ public class Campaign {
         this.description = description;
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Campaign campaign)) return false;
+
+        return Objects.equals(code, campaign.code);
+    }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(code);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Campaign other = (Campaign) obj;
-        if (code == null) {
-            if (other.code != null)
-                return false;
-        } else if (!code.equals(other.code))
-            return false;
-        return true;
-    }
-
-
-
 }

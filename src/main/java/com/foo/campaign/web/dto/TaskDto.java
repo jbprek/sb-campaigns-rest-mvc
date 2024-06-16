@@ -1,7 +1,5 @@
 package com.foo.campaign.web.dto;
 
-import com.foo.campaign.domain.model.Campaign;
-import com.foo.campaign.domain.model.Task;
 import com.foo.campaign.domain.model.TaskStatus;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Future;
@@ -12,9 +10,8 @@ import jakarta.validation.groups.ConvertGroup;
 import jakarta.validation.groups.Default;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
-public record TaskDto( // @formatter:off
+public record TaskDto( 
     Long id,
 
     String uuid,
@@ -41,33 +38,8 @@ public record TaskDto( // @formatter:off
 
     @Valid
     @ConvertGroup(from = Default.class, to = WorkerOnTaskCreateValidationData.class)
-    WorkerDto assignee) { // @formatter:on
+    WorkerDto assignee) { 
 
-    public static class Mapper {
-        public static Task toModel(TaskDto dto) {
-            if (dto == null)
-                return null;
-
-            Campaign campaign = new Campaign();
-            campaign.setId(dto.campaignId());
-
-            Task model = new Task(dto.name(), dto.description(), dto.dueDate(), campaign, dto.status(), WorkerDto.Mapper.toModel(dto.assignee()), dto.uuid());
-            if (!Objects.isNull(dto.id())) {
-                model.setId(dto.id());
-            }
-
-            // we won't allow creating or modifying Campaigns via a Task
-            return model;
-        }
-
-        public static TaskDto toDto(Task model) {
-            if (model == null)
-                return null;
-            TaskDto dto = new TaskDto(model.getId(), model.getUuid(), model.getName(), model.getDescription(), model.getDueDate(), model.getStatus(), model.getCampaign()
-                .getId(), WorkerDto.Mapper.toDto(model.getAssignee()));
-            return dto;
-        }
-    }
 
     public interface TaskUpdateValidationData {
     }

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.NaturalId;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -22,6 +23,7 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NaturalId
     @Column(unique = true, nullable = false, updatable = false)
     private String uuid = UUID.randomUUID()
         .toString();
@@ -58,27 +60,16 @@ public class Task {
     }
 
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task task)) return false;
+
+        return Objects.equals(uuid, task.uuid);
+    }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uuid);
+        return Objects.hashCode(uuid);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Task other = (Task) obj;
-        if (uuid == null) {
-            if (other.uuid != null)
-                return false;
-        } else if (!uuid.equals(other.uuid))
-            return false;
-        return true;
-    }
-
 }

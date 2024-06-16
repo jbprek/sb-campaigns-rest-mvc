@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.NaturalId;
 
 import java.util.Objects;
 
@@ -23,6 +24,7 @@ public class Worker {
     @Column(unique = true, nullable = false, updatable = false)
     @NotBlank
     @Email
+    @NaturalId
     private String email;
 
     private String firstName;
@@ -35,29 +37,16 @@ public class Worker {
         this.lastName = lastName;
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Worker worker)) return false;
 
-
+        return Objects.equals(email, worker.email);
+    }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(email);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Worker other = (Worker) obj;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
-        return true;
-    }
-
 }

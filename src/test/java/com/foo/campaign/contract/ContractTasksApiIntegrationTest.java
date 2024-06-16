@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import static org.hamcrest.Matchers.greaterThan;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class ContractTasksApiIntegrationTest {
+class ContractTasksApiIntegrationTest {
 
     @Autowired
     WebTestClient webClient;
@@ -26,7 +26,7 @@ public class ContractTasksApiIntegrationTest {
     Resource resource;
 
     @Test
-    void createNewTask_withValidTaskJsonString_thenSuccess() throws Exception {
+    void createNewTask_withValidTaskJsonString_thenSuccess()  {
         String taskJson = generateTaskJson();
 
         webClient.post()
