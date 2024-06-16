@@ -5,18 +5,17 @@ import com.foo.campaign.domain.model.TaskStatus;
 import com.foo.campaign.domain.model.Worker;
 import com.foo.campaign.persistence.repository.TaskRepository;
 import com.foo.campaign.service.TaskService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class DefaultTaskService implements TaskService {
-    private TaskRepository taskRepository;
 
-    public DefaultTaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+    private final TaskRepository taskRepository;
 
     @Override
     public List<Task> searchTasks(String nameSubstring, Long assigneeId) {

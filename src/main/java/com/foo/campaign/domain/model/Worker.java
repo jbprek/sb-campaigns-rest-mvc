@@ -3,9 +3,17 @@ package com.foo.campaign.domain.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Entity
 public class Worker {
     @Id
@@ -27,40 +35,8 @@ public class Worker {
         this.lastName = lastName;
     }
 
-    public Worker() {
-    }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     @Override
     public int hashCode() {
@@ -82,11 +58,6 @@ public class Worker {
         } else if (!email.equals(other.email))
             return false;
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Worker [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
     }
 
 }

@@ -3,17 +3,17 @@ package com.foo.campaign.service.impl;
 import com.foo.campaign.domain.model.Worker;
 import com.foo.campaign.persistence.repository.WorkerRepository;
 import com.foo.campaign.service.WorkerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+
+@RequiredArgsConstructor
 @Service
 public class DefaultWorkerService implements WorkerService {
-    private WorkerRepository workerRepository;
 
-    public DefaultWorkerService(WorkerRepository workerRepository) {
-        this.workerRepository = workerRepository;
-    }
+    private final WorkerRepository workerRepository;
 
     @Override
     public Optional<Worker> findById(Long id) {

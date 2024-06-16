@@ -3,11 +3,18 @@ package com.foo.campaign.domain.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Entity
 public class Campaign {
 
@@ -33,48 +40,6 @@ public class Campaign {
         this.description = description;
     }
 
-    public Campaign() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(Set<Task> tasks) {
-        this.tasks = tasks;
-    }
 
     @Override
     public int hashCode() {
@@ -98,9 +63,6 @@ public class Campaign {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Campaign [id=" + id + ", code=" + code + ", name=" + name + ", description=" + description + "]";
-    }
+
 
 }

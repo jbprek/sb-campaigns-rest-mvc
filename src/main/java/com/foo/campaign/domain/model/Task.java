@@ -3,11 +3,19 @@ package com.foo.campaign.domain.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Entity
 public class Task {
     @Id
@@ -35,8 +43,7 @@ public class Task {
     @ManyToOne
     private Worker assignee;
 
-    public Task() {
-    }
+
 
     public Task(String name, String description, LocalDate dueDate, Campaign campaign, TaskStatus status, Worker assignee, String uuid) {
         this.name = name;
@@ -50,70 +57,7 @@ public class Task {
         }
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(TaskStatus status) {
-        this.status = status;
-    }
-
-    public Campaign getCampaign() {
-        return campaign;
-    }
-
-    public void setCampaign(Campaign campaign) {
-        this.campaign = campaign;
-    }
-
-    public Worker getAssignee() {
-        return assignee;
-    }
-
-    public void setAssignee(Worker assignee) {
-        this.assignee = assignee;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    @Override
-    public String toString() {
-        return "Task [id=" + id + ", name=" + name + ", description=" + description + ", dueDate=" + dueDate + ", status=" + status + ", campaign=" + campaign + ", assignee=" + assignee + "]";
-    }
 
     @Override
     public int hashCode() {

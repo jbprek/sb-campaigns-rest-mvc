@@ -4,19 +4,17 @@ package com.foo.campaign.service.impl;
 import com.foo.campaign.domain.model.Campaign;
 import com.foo.campaign.persistence.repository.CampaignRepository;
 import com.foo.campaign.service.CampaignService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class DefaultCampaignService implements CampaignService {
 
-    private CampaignRepository campaignRepository;
-
-    public DefaultCampaignService(CampaignRepository campaignRepository) {
-        this.campaignRepository = campaignRepository;
-    }
+    private final CampaignRepository campaignRepository;
 
     @Override
     public Optional<Campaign> findById(Long id) {
